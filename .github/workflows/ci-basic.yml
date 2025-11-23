@@ -1,0 +1,31 @@
+name: Basic CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show environment info
+        run: |
+          echo "Running on:"
+          uname -a
+          echo "Current directory:"
+          pwd
+          echo "Files:"
+          ls -R
+
+      - name: Placeholder for build/tests
+        run: |
+          echo "Add your build/test commands here"
+          echo "Example for Maven: mvn clean verify"
+          echo "Example for Node: npm install && npm test"
